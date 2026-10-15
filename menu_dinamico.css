@@ -1,0 +1,13 @@
+
+/* Se conserva la cabecera original y se sustituye exclusivamente el contenido inferior. */
+.maqueta{height:auto;aspect-ratio:1536/599;overflow:hidden}
+.maqueta .fondo{width:100%;height:auto}
+#contenido-dinamico{background:#e9dcc2;color:#253638;padding:22px clamp(12px,3vw,42px) 48px;min-height:460px}
+.panel-dinamico{max-width:1450px;margin:auto}.panel-cabecera{border-bottom:2px solid #bb9761;padding-bottom:15px;margin-bottom:22px}
+.panel-cabecera h1{font:normal clamp(25px,3vw,40px) Georgia,serif;margin:5px 0 8px;color:#283d40}.etiqueta{font:11px Arial,sans-serif;letter-spacing:2px;color:#92632b}.intro{font:16px/1.6 Georgia,serif;max-width:860px;margin:6px 0}.rejilla-documentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:16px}.documento,.prueba{background:#f8f0df;border:1px solid #bfa578;border-radius:6px;padding:13px;box-shadow:0 2px 6px #0001}.documento img{display:block;width:100%;aspect-ratio:3/4;object-fit:contain;background:#efe6d7}.documento h2,.prueba h2{font:normal 18px/1.25 Georgia,serif;min-height:44px;margin:12px 0 4px}.documento p,.prueba p{font-size:13px;color:#5b5a52}.boton-clara{display:inline-block;background:#713c42;border:1px solid #b99660;color:#fff6e5;border-radius:4px;padding:10px 13px;font:14px Georgia,serif;cursor:pointer;text-decoration:none;margin:5px 7px 0 0}.boton-clara:hover,.boton-clara:focus-visible{background:#52272f;outline:2px solid #d6b268;outline-offset:2px}.rejilla-pruebas{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:16px}.prueba{display:flex;flex-direction:column;min-height:205px}.prueba .boton-clara{margin-top:auto;align-self:flex-start}.aviso{font-size:14px;line-height:1.6;margin-top:20px}.zona:focus-visible{background:#fff4d326}
+@media(max-width:750px){.maqueta{min-width:750px}#contenido-dinamico{min-width:0}.rejilla-documentos{grid-template-columns:repeat(auto-fit,minmax(135px,1fr))}}
+
+/* Alineación uniforme de los botones de lectura */
+.documento{display:flex;flex-direction:column}
+.documento .boton-clara{margin-top:auto;align-self:stretch;text-align:center}
+.documento p{margin-bottom:14px}
