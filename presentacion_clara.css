@@ -1,0 +1,28 @@
+main>.nota{max-width:920px;margin:12px auto 25px;text-align:center;font-size:12px;line-height:1.6;color:#f4e6cc}
+.clara-presentacion{max-width:850px;line-height:1.65;color:#433326}
+.clara-presentacion h2{font-size:clamp(19px,2.4vw,27px);line-height:1.25;color:#713e45;margin:18px 0 8px}
+.clara-presentacion p{margin:12px 0;font-size:15px}
+.clara-presentacion .clara-subtitulo{font-weight:700;color:#78523b}
+.clara-presentacion .clara-preguntas{font-style:italic;font-size:17px}
+.clara-presentacion .clara-cierre{font-weight:700;color:#713e45;border-top:1px solid #c9ad7d;padding-top:15px}
+.clara-expediente-boton{margin:12px 8px 16px 0!important;background:#7d202b!important}
+.clara-expediente-fondo{position:fixed;inset:0;background:rgba(10,19,20,.82);z-index:99999;display:flex;justify-content:center;align-items:center;padding:18px}
+.clara-expediente-panel{position:relative;box-sizing:border-box;width:min(760px,100%);max-height:92vh;overflow-y:auto;background:#f2e4c8;color:#352b24;border:2px solid #b18b55;border-radius:10px;box-shadow:0 20px 70px #0009;padding:clamp(22px,4vw,46px);font-family:Georgia,serif;line-height:1.65}
+.clara-expediente-panel h2{color:#702b34;font-size:clamp(25px,3vw,34px);line-height:1.2;margin:8px 0 22px}
+.clara-expediente-panel h3{color:#702b34;margin-top:25px}
+.clara-expediente-panel p{font-size:16px;margin:14px 0}
+.clara-expediente-panel .clara-expediente-etiqueta{font-size:12px;letter-spacing:.1em;font-weight:bold;color:#87613c}
+.clara-expediente-panel .clara-destacado{font-weight:bold;color:#702b34}
+.clara-expediente-cerrar{position:sticky;float:right;top:0;background:#702b34;color:white;border:0;padding:9px 13px;cursor:pointer;border-radius:4px}
+.clara-comenzar{margin-top:12px!important}
+@media(max-width:550px){.clara-expediente-panel p{font-size:14px}.clara-presentacion p{font-size:14px}}
+
+/* Inicio editorial a dos columnas, adaptable a móviles */
+.clara-presentacion{max-width:none!important;width:100%;box-sizing:border-box}
+.clara-presentacion-columnas{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(16px,3vw,34px);margin:22px 0}
+.clara-presentacion-columna{background:rgba(255,251,240,.42);border:1px solid #cbb58e;border-radius:9px;padding:clamp(16px,2vw,26px);min-width:0}
+.clara-presentacion-columna h3{font-size:clamp(17px,1.9vw,22px);line-height:1.3;color:#713e45;margin:0 0 14px}
+.clara-presentacion-columna p{margin:12px 0;line-height:1.7}
+.clara-presentacion .clara-preguntas{background:rgba(125,64,65,.07);border-left:4px solid #853e46;padding:15px 18px;margin:20px 0}
+.clara-presentacion .clara-cierre{font-size:clamp(16px,1.8vw,20px);text-align:center;margin:22px 0 10px;padding:22px 10px;border-top:1px solid #c9ad7d;border-bottom:1px solid #c9ad7d}
+@media(max-width:700px){.clara-presentacion-columnas{grid-template-columns:1fr}.clara-presentacion-columna{padding:17px}}
