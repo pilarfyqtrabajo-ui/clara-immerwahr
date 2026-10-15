@@ -1,0 +1,576 @@
+[
+  [
+    "Inicio · Antes de abrir el expediente",
+    "En equipos de tres, cada persona asume un rol inicial. El portavoz puede cambiar durante el escape.",
+    [
+      [
+        "Coordinación y gestión del tiempo",
+        "text"
+      ],
+      [
+        "Registro y cuaderno de campo",
+        "text"
+      ],
+      [
+        "Material y seguridad",
+        "text"
+      ],
+      [
+        "Antes de empezar: ¿qué creéis que vais a tener que averiguar? ¿Qué información os falta?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Método · Evidencia, interpretación y conclusión",
+    "Estas tres ideas se repetirán a lo largo de todo el cuaderno.",
+    [
+      [
+        "Evidencia",
+        "long"
+      ],
+      [
+        "Interpretación",
+        "long"
+      ],
+      [
+        "Conclusión",
+        "long"
+      ],
+      [
+        "¿Qué hemos observado exactamente? · ¿Qué dato es relevante? · ¿Hay otra explicación posible? · ¿La conclusión se apoya en la evidencia? · ¿Qué no podemos afirmar todavía?",
+        "long"
+      ],
+      [
+        "Registro de incidencias",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 1 · Huellas en el arma",
+    "Registrad el indicio antes de convertirlo en una conclusión.",
+    [
+      [
+        "Observación de la escena — ¿Qué elementos de la prueba consideráis relevantes antes de manipular nada?",
+        "long"
+      ],
+      [
+        "Registro de la huella / código — Anotad el patrón, números o símbolos obtenidos sin interpretarlos todavía.",
+        "long"
+      ],
+      [
+        "Razonamiento — ¿Cómo habéis transformado esa información en una pista útil?",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 2 · La copa de vino envenenada",
+    "En esta prueba el orden de los cambios importa.",
+    [
+      [
+        "Secuencia de observaciones — Anotad, en orden, los cambios que observáis durante la reacción.",
+        "long"
+      ],
+      [
+        "Variables y procedimiento — ¿Qué habéis añadido o modificado? ¿Qué habéis mantenido igual?",
+        "long"
+      ],
+      [
+        "Explicación química provisional — ¿Qué tipo de transformación química creéis que está teniendo lugar?",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 3 · La sangre que no era sangre",
+    "Una apariencia puede ser engañosa: contrastad antes de concluir.",
+    [
+      [
+        "Aspecto inicial de la muestra — Color, textura y cualquier rasgo que os llame la atención.",
+        "long"
+      ],
+      [
+        "Resultado tras el ensayo — ¿Qué cambio se produce al aplicar el reactivo o procedimiento?",
+        "long"
+      ],
+      [
+        "¿Qué demuestra? — Explicad qué permite sostener el resultado y qué NO permite afirmar todavía.",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 4 · El líquido azul de la limpiadora",
+    "Diferenciad el color de la muestra de la evidencia química obtenida.",
+    [
+      [
+        "Muestra inicial — Describid el líquido antes de comenzar el ensayo.",
+        "long"
+      ],
+      [
+        "Cambios observados — Anotad color, depósito, superficie metálica u otros cambios visibles.",
+        "long"
+      ],
+      [
+        "Especie química que investigáis — ¿Qué presencia química intenta poner de manifiesto esta prueba? Justificadlo.",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 5 · La carta del gas mostaza",
+    "Tratad la carta como una evidencia narrativa: extraed de ella solo la información necesaria.",
+    [
+      [
+        "Documento examinado — Copiad únicamente las partes de la estructura o texto que sean relevantes para resolver el reto.",
+        "long"
+      ],
+      [
+        "Elementos identificados — ¿Qué elementos proponéis para las incógnitas? ¿Qué propiedades os han orientado?",
+        "long"
+      ],
+      [
+        "Clave obtenida — Anotad la clave o combinación resultante y explicad el razonamiento.",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 6 · El documento encriptado y el compuesto X",
+    "La química funciona aquí como lenguaje para descifrar información.",
+    [
+      [
+        "Configuraciones / símbolos — Anotad los datos que aparecen en el documento antes de reorganizarlos.",
+        "long"
+      ],
+      [
+        "Proceso de descifrado — ¿Qué criterio habéis usado para convertir los datos químicos en letras o elementos?",
+        "long"
+      ],
+      [
+        "Compuesto X — ¿Qué nombre obtenéis? ¿Qué parte del razonamiento os permite defender vuestra propuesta?",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 7 · La ciencia ante el espejo",
+    "Aquí no hay una única respuesta correcta: importa la calidad de vuestra argumentación.",
+    [
+      [
+        "Dilema — Resumid con vuestras palabras el conflicto ético que plantea la prueba.",
+        "long"
+      ],
+      [
+        "Argumentos a favor de una postura — Anotad al menos dos argumentos y qué valores o consecuencias tienen en cuenta.",
+        "long"
+      ],
+      [
+        "Argumentos de la postura contraria — Anotad al menos dos argumentos y qué valores o consecuencias tienen en cuenta.",
+        "long"
+      ],
+      [
+        "Posición razonada del equipo — ¿Qué postura defendéis finalmente y por qué? Debéis justificarla, no solo elegirla.",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 8 · El agua especial",
+    "Observad más de un indicio: una reacción puede dejar varias evidencias simultáneas.",
+    [
+      [
+        "Antes de reaccionar — ¿Cómo son las sustancias o disoluciones al inicio?",
+        "long"
+      ],
+      [
+        "Durante la reacción — Anotad cambios de color, formación de sólido, burbujas u otras evidencias.",
+        "long"
+      ],
+      [
+        "Interpretación redox — ¿Qué indicios os permiten pensar que ha ocurrido una reacción de oxidación-reducción?",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 9 · El perfume y el mensaje final",
+    "El cambio del indicador es una evidencia; la interpretación viene después.",
+    [
+      [
+        "Muestra / indicador — Anotad el aspecto inicial y el indicador utilizado.",
+        "long"
+      ],
+      [
+        "Cambio observado — ¿Qué ocurre al poner en contacto las sustancias?",
+        "long"
+      ],
+      [
+        "Carácter químico de la muestra — ¿Qué podéis afirmar sobre su comportamiento ácido o básico? Justificadlo.",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Prueba 10 · La geometría final y la clave del botiquín",
+    "Química molecular y cifrado se combinan para conducir al cierre de la investigación.",
+    [
+      [
+        "Estructura molecular — Representad o describid la geometría molecular que habéis identificado y explicad qué os lleva a ella.",
+        "long"
+      ],
+      [
+        "Mensaje cifrado — Copiad exactamente el texto cifrado antes de comenzar el descifrado.",
+        "long"
+      ],
+      [
+        "Procedimiento de descifrado — ¿Qué desplazamiento o regla habéis utilizado? Explicadla sin limitaros a escribir el resultado.",
+        "long"
+      ],
+      [
+        "Siguiente paso — ¿A qué lugar, objeto o evidencia os conduce la prueba?",
+        "long"
+      ],
+      [
+        "EVIDENCIA · ¿Qué hemos observado?",
+        "long"
+      ],
+      [
+        "INTERPRETACIÓN · ¿Qué significa?",
+        "long"
+      ],
+      [
+        "CONCLUSIÓN · ¿Qué podemos concluir?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Síntesis · Mapa de evidencias",
+    "Antes del informe final, revisad qué aportó realmente cada prueba.",
+    [
+      [
+        "Prueba 1 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 2 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 3 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 4 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 5 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 6 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 7 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 8 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 9 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 10 · Evidencia principal",
+        "long"
+      ],
+      [
+        "Prueba 1 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 2 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 3 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 4 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 5 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 6 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 7 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 8 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 9 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 10 · ¿Qué permitió concluir?",
+        "long"
+      ],
+      [
+        "Prueba 1 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 2 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 3 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 4 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 5 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 6 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 7 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 8 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 9 · Grado de confianza",
+        "choice"
+      ],
+      [
+        "Prueba 10 · Grado de confianza",
+        "choice"
+      ]
+    ]
+  ],
+  [
+    "Cierre · Informe final del caso",
+    "El equipo debe construir una conclusión razonada a partir del conjunto de evidencias.",
+    [
+      [
+        "¿Qué explicación final proponéis para el caso? Redactadla con claridad.",
+        "long"
+      ],
+      [
+        "Seleccionad las tres evidencias más importantes y explicad por qué son relevantes.",
+        "long"
+      ],
+      [
+        "¿Qué indicios parecían importantes al principio pero no permitieron sostener una conclusión?",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Cierre · Ciencia, ética y responsabilidad",
+    "La investigación termina, pero la pregunta sobre el uso de la ciencia permanece.",
+    [
+      [
+        "Después del escape, ¿qué idea sobre Clara consideráis más importante y por qué?",
+        "long"
+      ],
+      [
+        "¿Tiene responsabilidad una persona científica sobre el uso posterior de sus descubrimientos? Argumentad vuestra respuesta.",
+        "long"
+      ],
+      [
+        "Escribid una idea del escape que pueda aplicarse a un problema científico actual.",
+        "long"
+      ],
+      [
+        "Completad: “Después de esta investigación, creemos que la ciencia...”",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Evaluación · Autoevaluación del equipo",
+    "Escala: 4 = muy conseguido · 3 = conseguido · 2 = en proceso · 1 = necesitamos mejorarlo.",
+    [
+      [
+        "Hemos registrado evidencias antes de sacar conclusiones.",
+        "scale"
+      ],
+      [
+        "Hemos justificado nuestras respuestas con razonamiento científico.",
+        "scale"
+      ],
+      [
+        "Hemos repartido las tareas y escuchado las aportaciones del equipo.",
+        "scale"
+      ],
+      [
+        "Hemos utilizado los materiales de forma responsable y segura.",
+        "scale"
+      ],
+      [
+        "Hemos sabido revisar una hipótesis cuando la evidencia no la apoyaba.",
+        "scale"
+      ],
+      [
+        "Hemos distinguido hechos históricos, ficción narrativa e interpretación.",
+        "scale"
+      ],
+      [
+        "Podemos explicar qué relación tiene el caso con la ética científica.",
+        "scale"
+      ],
+      [
+        "Lo mejor de nuestro trabajo como equipo",
+        "long"
+      ],
+      [
+        "Si repitiéramos el escape, mejoraríamos...",
+        "long"
+      ]
+    ]
+  ],
+  [
+    "Salida · Mi última anotación como investigador/a",
+    "Esta página puede completarse individualmente.",
+    [
+      [
+        "La prueba que más me hizo pensar fue... Explica por qué.",
+        "long"
+      ],
+      [
+        "Una idea de química que ahora comprendo mejor es...",
+        "long"
+      ],
+      [
+        "Una evidencia que al principio interpreté mal fue... ¿Qué cambió mi interpretación?",
+        "long"
+      ],
+      [
+        "La pregunta que me llevo del caso es...",
+        "long"
+      ]
+    ]
+  ]
+]

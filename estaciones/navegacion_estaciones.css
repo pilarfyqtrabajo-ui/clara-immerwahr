@@ -1,0 +1,6 @@
+#clara-navegacion-global{position:sticky;top:0;z-index:99999;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;background:#102e35;color:#f9ecd4;padding:12px 15px;border-bottom:2px solid #c29b60;font:15px/1.4 Georgia,serif;box-sizing:border-box}
+#clara-navegacion-global a{display:inline-block;color:#fff4d9!important;background:#703a41;text-decoration:none;border:1px solid #c29b60;border-radius:5px;padding:9px 13px}
+#clara-navegacion-global a:hover,#clara-navegacion-global a:focus-visible{background:#8b4a4e;outline:2px solid #f5d48c}
+#clara-navegacion-global a[hidden],#clara-estado-superado[hidden]{display:none!important}
+#clara-contador{padding:5px 10px;color:#f3d5a4}
+#clara-estado-superado{position:relative;z-index:3;background:#e9dec6;border-bottom:2px solid #c29b60;padding:12px 20px;color:#243c40;font:16px Georgia,serif;text-align:center}

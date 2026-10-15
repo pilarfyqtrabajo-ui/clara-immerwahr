@@ -1,0 +1,6 @@
+
+.clara-audio-caja{max-width:800px;margin:22px auto;padding:24px;background:#f7efdc;border:1px solid #c9ac79;border-radius:7px;box-shadow:0 2px 10px #48361b17;color:#1a3439}
+.clara-audio-caja h2{font:normal 1.5rem Georgia,serif;margin:0 0 18px}
+.clara-audio-caja audio{width:100%;display:block;margin:16px 0;accent-color:#743e45}
+.clara-audio-caja details{margin-top:20px;border-top:1px solid #c9ac79;padding-top:15px}
+.clara-audio-caja summary{cursor:pointer;font-weight:bold}

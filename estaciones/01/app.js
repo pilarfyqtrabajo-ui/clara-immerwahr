@@ -1,0 +1,4 @@
+'use strict';
+const $=id=>document.getElementById(id);
+$('comprobar').addEventListener('click',()=>{const v=$('interpretacion').value;$('respuesta').textContent=!v?'Selecciona una interpretación.':v==='b'?'Correcto. La huella puede indicar contacto, pero no establece por sí sola culpabilidad.':'Revisa la inferencia: una huella no permite demostrar culpabilidad ni fechar con precisión el contacto.';});
+$('validar').addEventListener('click',()=>{const v=$('codigo').value.trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z]/g,'');$('resultado').textContent=!v?'Introduce un nombre para comprobar el código.':v==='ANA'?'Código correcto: 11 = Na, 7 = N y 11 = Na. La secuencia Na–N–Na conduce a ANA. Es una pista, no una prueba de culpabilidad.':'Aún no coincide. Consulta los números atómicos 11 y 7 en la tabla periódica y vuelve a intentarlo.';});
