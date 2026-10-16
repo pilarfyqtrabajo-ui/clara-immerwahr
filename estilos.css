@@ -2,3 +2,115 @@
 .lector[hidden]{display:none}.lector{position:fixed;inset:0;z-index:1000;background:rgba(5,20,24,.88);padding:16px;display:flex;align-items:center;justify-content:center}.lector-panel{width:min(1100px,100%);height:min(95vh,100%);background:#f4ead7;color:#213339;border:2px solid #c5a46b;border-radius:8px;display:flex;flex-direction:column;overflow:hidden}.lector-cabecera{background:#142e34;color:#f4ead7;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:10px 16px}.lector-cabecera h2{font-size:clamp(1rem,2vw,1.4rem);margin:0}.control{background:#743d43;color:white;border:1px solid #c5a46b;border-radius:4px;padding:9px 13px;cursor:pointer;font:inherit}.control:focus-visible{outline:3px solid #d6a951}.control:disabled{opacity:.45;cursor:not-allowed}.lector-herramientas{display:flex;align-items:center;justify-content:center;gap:16px;padding:9px;background:#ead9b9}.pagina-contenedor{flex:1;min-height:0;overflow:auto;background:#c8c1b4;text-align:center;padding:12px}.pagina-contenedor img{display:block;margin:0 auto;max-width:100%;height:auto;background:white;box-shadow:0 2px 10px #0003}.lector-herramientas input{width:72px;font:inherit;padding:6px}.estado{margin:0;min-height:1.2em;font-size:12px;text-align:center;color:#754043;background:#ead9b9}.lector-pie{margin:0;padding:8px 12px;font-size:12px;text-align:center;background:#f4ead7;color:#554a3b}@media(max-width:600px){.lector{padding:3px}.lector-panel{height:99vh}.lector-herramientas{gap:7px}.control{padding:7px 9px}}
 
 @media(max-width:600px){.lector-herramientas{gap:4px;flex-wrap:wrap}.lector-herramientas input{width:55px}.lector-pie{font-size:10px}}
+
+
+/* clara-tarjeta-profesorado-v1 */
+.clara-tarjeta-profesorado{
+ grid-column:span 2;
+ background:linear-gradient(135deg,#173b42,#28565a);
+ color:#f4ead7;
+ border:2px solid #c5a46b;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ gap:10px;
+ padding:18px;
+}
+.clara-tarjeta-profesorado h2{
+ color:#fff1cc;
+ font-size:1.45rem;
+ margin:0;
+}
+.clara-tarjeta-profesorado p{
+ color:#f4ead7;
+ line-height:1.45;
+ margin:0;
+}
+.clara-tarjeta-profesorado .etiqueta{
+ color:#e6c58d;
+}
+.clara-tarjeta-profesorado .boton-clara{
+ align-self:flex-start;
+ background:#743d43;
+ color:white;
+ margin-top:8px;
+}
+@media(max-width:650px){
+ .clara-tarjeta-profesorado{grid-column:1/-1}
+}
+
+/* Tarjeta destacada del profesorado: diseño morado */
+.rejilla-pruebas .prueba.clara-tarjeta-profesorado {
+    grid-column: span 2 !important;
+    background: #57265f !important;
+    background-image: none !important;
+    border: 2px solid #d9b76e !important;
+    border-radius: 8px !important;
+    padding: 18px 22px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    box-shadow: 0 4px 12px rgba(42, 16, 48, .25);
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado .etiqueta {
+    color: #f2d79a !important;
+    font-size: .78rem !important;
+    letter-spacing: .12em;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado h2 {
+    color: #fff3d8 !important;
+    font-size: clamp(1.35rem, 2vw, 1.85rem) !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado p {
+    color: #f7e9f4 !important;
+    font-size: .98rem !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado .boton-clara {
+    align-self: flex-start !important;
+    background: #e7c88a !important;
+    color: #392044 !important;
+    border: 1px solid #fff0c8 !important;
+    font-weight: bold !important;
+    padding: 10px 14px !important;
+    margin-top: 5px !important;
+}
+
+@media (max-width: 650px) {
+    .rejilla-pruebas .prueba.clara-tarjeta-profesorado {
+        grid-column: 1 / -1 !important;
+    }
+}
+
+/* Ajuste cromático definitivo: tarjeta borgoña */
+.rejilla-pruebas .prueba.clara-tarjeta-profesorado {
+    background: #722D38 !important;
+    background-image: none !important;
+    border-color: #C5A46B !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado .etiqueta {
+    color: #E8C994 !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado h2 {
+    color: #FFF1D6 !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado p {
+    color: #F7E8DF !important;
+}
+
+.rejilla-pruebas .clara-tarjeta-profesorado .boton-clara {
+    background: #E8C994 !important;
+    color: #54232D !important;
+    border-color: #F4DFB7 !important;
+}

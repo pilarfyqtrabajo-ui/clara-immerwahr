@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valoración educativa · Clara Immerwahr</title>
+<style>
+:root {
+  --vino:#713746;
+  --vino-oscuro:#542532;
+  --crema:#fbf5e9;
+  --papel:#fffdf9;
+  --borde:#e4d5c5;
+  --texto:#302b2a;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  color:var(--texto);
+  background:var(--crema);
+  line-height:1.55;
+}
+header {
+  background:var(--vino-oscuro);
+  color:white;
+  padding:30px 18px;
+  text-align:center;
+}
+header h1 { margin:0 0 8px; font-size:clamp(1.5rem,4vw,2.2rem); }
+header p { margin:0; opacity:.9; }
+main { max-width:850px; margin:25px auto; padding:0 16px 45px; }
+.panel {
+  background:var(--papel);
+  border:1px solid var(--borde);
+  border-radius:15px;
+  padding:24px;
+  margin-bottom:20px;
+  box-shadow:0 3px 12px #402b2110;
+}
+h2 { color:var(--vino); margin-top:0; }
+h3 { color:var(--vino); margin:0 0 12px; }
+p { margin-top:8px; }
+.opciones {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+.opcion {
+  border:1px solid var(--borde);
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  background:var(--crema);
+}
+.opcion .icono { font-size:2rem; }
+button {
+  font:inherit;
+  border:0;
+  border-radius:9px;
+  padding:11px 17px;
+  cursor:pointer;
+  background:var(--vino);
+  color:white;
+  font-weight:650;
+}
+button:hover { background:var(--vino-oscuro); }
+button.secundario {
+  background:#f2e7df;
+  color:var(--vino-oscuro);
+}
+button:focus-visible, input:focus-visible,
+textarea:focus-visible,select:focus-visible {
+  outline:3px solid #bd8e40;
+  outline-offset:2px;
+}
+.opcion button { width:100%; margin-top:12px; }
+.bloque {
+  padding:20px;
+  border:1px solid var(--borde);
+  border-radius:12px;
+  margin:18px 0;
+  background:#fffaf2;
+}
+.pregunta { margin:0 0 22px; }
+.pregunta:last-child { margin-bottom:0; }
+.pregunta > label, .pregunta > strong {
+  display:block;
+  font-weight:650;
+  margin-bottom:9px;
+}
+.escala {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+.escala label {
+  display:flex;
+  align-items:center;
+  gap:5px;
+  padding:8px 12px;
+  background:white;
+  border:1px solid var(--borde);
+  border-radius:8px;
+  cursor:pointer;
+}
+.ayuda { font-size:.89rem; color:#675b57; }
+input[type=text],input[type=number],select,textarea {
+  width:100%;
+  border:1px solid #cbb9ad;
+  border-radius:8px;
+  background:white;
+  padding:11px;
+  font:inherit;
+}
+textarea { min-height:95px; resize:vertical; }
+.casillas { display:grid; gap:8px; }
+.casillas label { display:flex; align-items:flex-start; gap:9px; }
+.acciones { display:flex; gap:10px; flex-wrap:wrap; }
+.aviso {
+  background:#f3e8d6;
+  border-left:4px solid var(--vino);
+  padding:12px 15px;
+  border-radius:5px;
+}
+.oculto { display:none!important; }
+footer { text-align:center; color:#675b57; padding:15px; font-size:.88rem; }
+@media(max-width:600px) {
+  .opciones { grid-template-columns:1fr; }
+  .panel { padding:17px; }
+  .bloque { padding:14px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Valoración educativa</h1>
+  <p>El misterioso caso de Clara Immerwahr</p>
+</header>
+
+<main>
+<section id="inicio" class="panel">
+  <h2>Tu opinión nos ayuda a mejorar</h2>
+  <p>Selecciona el cuestionario que te corresponde.
+     Las respuestas del profesorado y del alumnado se analizarán por separado.</p>
+  <div class="opciones">
+    <div class="opcion">
+      <div class="icono" aria-hidden="true">👩‍🏫</div>
+      <h3>Profesorado</h3>
+      <p>Valoración didáctica, científica, organizativa y de los materiales.</p>
+      <button type="button" onclick="mostrar('docentes')">
+        Cuestionario del profesorado
+      </button>
+    </div>
+    <div class="opcion">
+      <div class="icono" aria-hidden="true">🧑‍🎓</div>
+      <h3>Alumnado</h3>
+      <p>Experiencia, aprendizaje, dificultad y propuestas de mejora.</p>
+      <button type="button" onclick="mostrar('alumnos')">
+        Cuestionario del alumnado
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="docentes" class="panel oculto">
+  <h2>Cuestionario del profesorado</h2>
+  <p>Este formulario permite evaluar la aplicación educativa del proyecto.
+     No incluyas nombres del alumnado ni datos personales.</p>
+
+  <form id="form-docentes">
+    <div class="bloque">
+      <h3>1. Contexto de aplicación</h3>
+      <div class="pregunta">
+        <strong>Nivel o niveles educativos</strong>
+        <div class="casillas" id="niveles-docentes"></div>
+      </div>
+      <div class="pregunta">
+        <label for="numero-alumnos">Número aproximado de participantes</label>
+        <input id="numero-alumnos" name="participantes" type="number" min="1">
+      </div>
+      <div class="pregunta">
+        <label for="modalidad">Modalidad de realización</label>
+        <select id="modalidad" name="modalidad">
+          <option value="">Selecciona una opción</option>
+          <option>Presencial</option>
+          <option>Virtual</option>
+          <option>Mixta</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label for="centro-docente">Nombre del centro educativo (opcional)</label>
+        <input id="centro-docente" name="centro" type="text"
+               maxlength="150">
+      </div>
+
+      <div class="pregunta">
+        <label for="localidad-docente">Localidad</label>
+        <input id="localidad-docente" name="localidad" type="text"
+               maxlength="100" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="pais-docente">País</label>
+        <input id="pais-docente" name="pais" type="text"
+               maxlength="100" value="España" required>
+      </div>
+
+      <div class="pregunta">
+        <label for="curso-docente">Curso académico</label>
+        <input id="curso-docente" name="curso_academico" type="text"
+               maxlength="9" placeholder="2026/2027"
+               pattern="[0-9]{4}/[0-9]{4}" required>
+      </div>
+
+    </div>
+
+    <div class="bloque">
+      <h3>2. Valoración didáctica y científica</h3>
+      <p class="ayuda">Escala de 1 (muy baja) a 5 (muy alta).</p>
+      <div id="preguntas-docentes-didactica"></div>
+    </div>
+
+    <div class="bloque">
+      <h3>3. Organización y materiales</h3>
+      <p class="ayuda">Escala de 1 (muy baja) a 5 (muy alta).</p>
+      <div id="preguntas-docentes-organizacion"></div>
+    </div>
+
+    <div class="bloque">
+      <h3>4. Valoración global y propuestas de mejora</h3>
+      <div id="preguntas-docentes-global"></div>
+      <div class="pregunta">
+        <label for="repetir">¿Volverías a utilizar esta experiencia?</label>
+        <select id="repetir" name="repetir">
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+          <option>No lo sé</option>
+        </select>
+      </div>
+      <div class="pregunta">
+        <label for="mejoras-docentes">¿Qué mejorarías?</label>
+        <textarea id="mejoras-docentes" name="mejoras"></textarea>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <strong>Valoración educativa.</strong> Las respuestas se registran de forma centralizada para evaluar y mejorar el proyecto «El misterioso caso de Clara Immerwahr». No se solicitan nombres ni direcciones de correo electrónico. El envío está en fase de validación técnica.</div>
+    <div class="acciones" style="margin-top:18px">
+      <button type="button" class="secundario" onclick="volver()">Volver</button>
+      <button type="button" onclick="enviarValoracion('profesorado')">Enviar valoración</button>
+    </div>
+  </form>
+</section>
+
+<section id="alumnos" class="panel oculto">
+  <h2>Tu experiencia en El misterioso caso de Clara Immerwahr</h2>
+  <p>Queremos conocer tu opinión sobre el escape room que acabas de realizar.
+     No es un examen y tus respuestas no influirán en tus calificaciones.
+     Contesta con sinceridad para ayudarnos a mejorar la actividad.</p>
+  <p><strong>No escribas tu nombre ni datos que permitan identificarte.</strong></p>
+
+  <form id="form-alumnos">
+    <div class="bloque">
+      <h3>Datos de la experiencia</h3>
+      <div class="pregunta">
+        <label for="nivel-alumno">Nivel educativo</label>
+        <select id="nivel-alumno" name="nivel">
+          <option value="">Selecciona tu nivel</option>
+        </select>
+      </div>
+      <div class="pregunta">
+        <label for="sesion-alumno">Código de sesión facilitado por el profesorado</label>
+        <input id="sesion-alumno" name="sesion" type="text"
+               maxlength="30" autocomplete="off"
+               placeholder="Si te han facilitado un código">
+        <p class="ayuda">No introduzcas tu nombre ni otros datos personales.</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>1. Tu experiencia</h3>
+      <div id="preguntas-alumnos-experiencia"></div>
+    </div>
+
+    <div class="bloque">
+      <h3>2. Aprendizaje y trabajo cooperativo</h3>
+      <div id="preguntas-alumnos-aprendizaje"></div>
+    </div>
+
+    <div class="bloque">
+      <h3>3. Dificultad y organización</h3>
+      <div id="preguntas-alumnos-dificultad"></div>
+    </div>
+
+    <div class="bloque">
+      <h3>4. Tu valoración final</h3>
+      <div class="pregunta">
+        <label for="favorita">11. ¿Qué prueba te ha gustado más?</label>
+        <select id="favorita" name="favorita"></select>
+      </div>
+      <div class="pregunta">
+        <label for="dificil">12. ¿Qué prueba te ha resultado más difícil?</label>
+        <select id="dificil" name="dificil"></select>
+      </div>
+      <div class="pregunta">
+        <label for="aprendido">13. ¿Qué es lo más interesante que has aprendido?</label>
+        <textarea id="aprendido" name="aprendido"></textarea>
+      </div>
+      <div class="pregunta">
+        <label for="mejoras-alumnos">14. ¿Qué cambiarías o mejorarías del escape room?</label>
+        <textarea id="mejoras-alumnos" name="mejoras"></textarea>
+        <p class="ayuda">Esta pregunta es opcional.</p>
+      </div>
+      <div class="pregunta">
+        <label for="recomendar">15. ¿Recomendarías esta experiencia a otros estudiantes?</label>
+        <select id="recomendar" name="recomendar">
+          <option value="">Selecciona una opción</option>
+          <option>Sí</option>
+          <option>No</option>
+          <option>No lo sé</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="aviso">
+      <strong>Valoración educativa.</strong> Las respuestas se registran de forma centralizada para evaluar y mejorar el proyecto «El misterioso caso de Clara Immerwahr». No se solicitan nombres ni direcciones de correo electrónico. El envío está en fase de validación técnica.
+    </div>
+    <div class="acciones" style="margin-top:18px">
+      <button type="button" class="secundario" onclick="volver()">Volver</button>
+      <button type="button" onclick="enviarValoracion('alumnado')">Enviar valoración</button>
+    </div>
+  </form>
+</section>
+
+<div id="volver-inicio-clara" style="
+  text-align:center;
+  margin:24px auto 30px;
+  padding:0 16px;
+">
+  <a href="index.html#inicio" style="
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:9px;
+    background:#713749;
+    color:#ffffff;
+    text-decoration:none;
+    font-weight:700;
+    font-family:inherit;
+  ">← Volver al inicio</a>
+</div>
+</main>
+
+<footer>El misterioso caso de Clara Immerwahr · Valoración educativa</footer>
+
+<script>
+const niveles = [
+  "2.º de ESO", "3.º de ESO", "4.º de ESO",
+  "1.º de Bachillerato", "2.º de Bachillerato",
+  "Otro nivel educativo"
+];
+
+const estaciones = [
+  "1. Huellas en el arma",
+  "2. La copa de vino envenenada",
+  "3. La sangre que no era sangre",
+  "4. El líquido azul de la limpiadora",
+  "5. La carta del gas mostaza",
+  "6. El documento encriptado y el compuesto X",
+  "7. La ciencia ante el espejo",
+  "8. El agua especial",
+  "9. El perfume y el mensaje final",
+  "10. La geometría final y la clave del botiquín"
+];
+
+const preguntasAlumnos = {
+  experiencia: [
+    "¿Cuánto te ha gustado participar en este escape room?",
+    "¿Hasta qué punto te has sentido motivado o motivada durante la actividad?",
+    "¿En qué medida has participado activamente en la resolución de las pruebas?"
+  ],
+  aprendizaje: [
+    "¿Cuánto te ha ayudado la actividad a comprender o aplicar conocimientos de Física y Química?",
+    "¿Cuánto has aprendido sobre la vida de Clara Immerwahr y su contexto histórico?",
+    "¿En qué medida te ha ayudado a conocer las dificultades que han afrontado las mujeres en la ciencia?",
+    "¿Cuánto te ha hecho reflexionar sobre las consecuencias éticas de utilizar los conocimientos científicos?",
+    "¿Hasta qué punto has colaborado con tus compañeros y compañeras para resolver las pruebas?"
+  ],
+  dificultad: [
+    "¿En qué medida las instrucciones de las pruebas te han resultado claras?",
+    "¿Qué nivel de dificultad te han parecido las pruebas?"
+  ]
+};
+
+const preguntasDocentes = {
+  didactica: [
+    "Utilidad para el aprendizaje de Física y Química.",
+    "Adecuación de las pruebas al nivel educativo.",
+    "Motivación e implicación del alumnado.",
+    "Desarrollo del trabajo cooperativo.",
+    "Contribución al conocimiento de la historia de la ciencia.",
+    "Contribución a la visibilización de las mujeres científicas.",
+    "Capacidad para promover la reflexión ética sobre la ciencia."
+  ],
+  organizacion: [
+    "Claridad de las guías del profesorado.",
+    "Facilidad de preparación y montaje.",
+    "Adecuación del tiempo disponible.",
+    "Claridad de las instrucciones de las pruebas.",
+    "Adecuación de las medidas de seguridad.",
+    "Utilidad de los recursos digitales.",
+    "Funcionamiento del temporizador."
+  ],
+  global: [
+    "Valoración global de la experiencia educativa."
+  ]
+};
+
+function crearEscala(texto, nombre, indice, descripcion) {
+  const bloque = document.createElement("div");
+  bloque.className = "pregunta";
+
+  const titulo = document.createElement("strong");
+  titulo.textContent = (indice ? indice + ". " : "") + texto;
+  bloque.appendChild(titulo);
+
+  if (descripcion) {
+    const ayuda = document.createElement("p");
+    ayuda.className = "ayuda";
+    ayuda.textContent = descripcion;
+    bloque.appendChild(ayuda);
+  }
+
+  const escala = document.createElement("div");
+  escala.className = "escala";
+  escala.setAttribute("role", "group");
+  escala.setAttribute("aria-label", texto);
+
+  for (let i = 1; i <= 5; i++) {
+    const label = document.createElement("label");
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = nombre;
+    radio.value = String(i);
+    label.append(radio, document.createTextNode(" " + i));
+    escala.appendChild(label);
+  }
+  bloque.appendChild(escala);
+  return bloque;
+}
+
+let n = 1;
+for (const [grupo, preguntas] of Object.entries(preguntasAlumnos)) {
+  const destino = document.getElementById("preguntas-alumnos-" + grupo);
+  preguntas.forEach((texto) => {
+    const ayuda = n === 10
+      ? "1 = muy fáciles; 5 = muy difíciles."
+      : "1 = nada o muy poco; 5 = mucho.";
+    destino.appendChild(crearEscala(texto, "a" + n, n, ayuda));
+    n++;
+  });
+}
+
+for (const [grupo, preguntas] of Object.entries(preguntasDocentes)) {
+  const destino = document.getElementById("preguntas-docentes-" + grupo);
+  preguntas.forEach((texto, i) => {
+    destino.appendChild(
+      crearEscala(texto, "d_" + grupo + "_" + (i+1), null, null)
+    );
+  });
+}
+
+const selectorNivel = document.getElementById("nivel-alumno");
+niveles.forEach(nivel => {
+  const opt = document.createElement("option");
+  opt.value = nivel;
+  opt.textContent = nivel;
+  selectorNivel.appendChild(opt);
+});
+
+const casillas = document.getElementById("niveles-docentes");
+niveles.forEach(nivel => {
+  const label = document.createElement("label");
+  const check = document.createElement("input");
+  check.type = "checkbox";
+  check.name = "niveles";
+  check.value = nivel;
+  label.append(check, document.createTextNode(nivel));
+  casillas.appendChild(label);
+});
+
+["favorita", "dificil"].forEach(id => {
+  const select = document.getElementById(id);
+  const inicial = document.createElement("option");
+  inicial.value = "";
+  inicial.textContent = "Selecciona una prueba";
+  select.appendChild(inicial);
+  estaciones.forEach(estacion => {
+    const opt = document.createElement("option");
+    opt.value = estacion;
+    opt.textContent = estacion;
+    select.appendChild(opt);
+  });
+});
+
+function mostrar(id) {
+  document.getElementById("inicio").classList.add("oculto");
+  document.getElementById("docentes").classList.add("oculto");
+  document.getElementById("alumnos").classList.add("oculto");
+  document.getElementById(id).classList.remove("oculto");
+  window.scrollTo(0,0);
+}
+
+function volver() {
+  mostrar("inicio");
+}
+
+
+const URL_VALORACIONES = "https://script.google.com/macros/s/AKfycby92UAJGkrYkbuK9C5QIQ-Jo9x1LvLdxEEUGhvaHAg4KjRvhw0zQvnKkzRMC_28CmdqGQ/exec";
+
+function enviarValoracion(tipo) {
+  const formulario = document.getElementById(
+    tipo === "profesorado" ? "form-docentes" : "form-alumnos"
+  );
+
+  if (!formulario.reportValidity()) return;
+
+  const datos = { tipo };
+  const camposFormulario = new FormData(formulario);
+
+  for (const [clave, valor] of camposFormulario.entries()) {
+    if (clave === "niveles") {
+      if (!datos.niveles) datos.niveles = [];
+      datos.niveles.push(valor);
+    } else {
+      datos[clave] = valor;
+    }
+  }
+
+  const preguntas = tipo === "alumnado"
+    ? Array.from({length: 10}, (_, i) => "a" + (i + 1))
+    : [
+        ...Array.from(
+          {length: 7},
+          (_, i) => "d_didactica_" + (i + 1)
+        ),
+        ...Array.from(
+          {length: 7},
+          (_, i) => "d_organizacion_" + (i + 1)
+        ),
+        "d_global_1"
+      ];
+
+  if (preguntas.some(nombre => !datos[nombre])) {
+    alert("Responde todas las preguntas de valoración.");
+    return;
+  }
+
+  if (tipo === "profesorado" && !datos.niveles?.length) {
+    alert("Selecciona al menos un nivel educativo.");
+    return;
+  }
+
+  if (!confirm("¿Quieres enviar esta valoración?")) return;
+
+  const identificador =
+    "clara_" + Date.now() + "_" +
+    Math.random().toString(36).slice(2, 12);
+
+  datos._identificador = identificador;
+
+  const iframe = document.createElement("iframe");
+  iframe.name = "envio-clara-" + Date.now();
+  iframe.style.display = "none";
+  document.body.appendChild(iframe);
+
+  const envio = document.createElement("form");
+  envio.method = "POST";
+  envio.action = URL_VALORACIONES;
+  envio.target = iframe.name;
+  envio.style.display = "none";
+
+  const campo = document.createElement("input");
+  campo.type = "hidden";
+  campo.name = "payload";
+  campo.value = JSON.stringify(datos);
+
+  envio.appendChild(campo);
+  document.body.appendChild(envio);
+
+  const boton = formulario.querySelector(
+    '[onclick*="enviarValoracion"]'
+  );
+
+  if (boton) boton.disabled = true;
+
+  let terminado = false;
+
+  function limpiar() {
+    window.removeEventListener("message", recibirConfirmacion);
+    clearTimeout(tiempoEspera);
+    envio.remove();
+    iframe.remove();
+    if (boton) boton.disabled = false;
+  }
+
+  function recibirConfirmacion(evento) {
+    const mensaje = evento.data;
+
+    if (
+      !mensaje ||
+      mensaje.origen !== "clara-valoraciones" ||
+      mensaje.identificador !== identificador
+    ) {
+      return;
+    }
+
+    // La respuesta debe proceder del iframe creado
+    // para este envío o de su documento interno.
+    if (
+      evento.source !== iframe.contentWindow &&
+      !String(evento.origin).includes("google")
+    ) {
+      return;
+    }
+
+    if (terminado) return;
+    terminado = true;
+
+    limpiar();
+
+    if (mensaje.correcto === true) {
+      alert(
+        "Tu valoración se ha registrado correctamente. " +
+        "Gracias por participar."
+      );
+      formulario.reset();
+    } else {
+      alert(
+        "No se ha podido guardar la valoración. " +
+        "Puedes volver a intentarlo."
+      );
+    }
+  }
+
+  window.addEventListener("message", recibirConfirmacion);
+
+  const tiempoEspera = setTimeout(() => {
+    if (terminado) return;
+    terminado = true;
+
+    limpiar();
+
+    alert(
+      "No hemos podido confirmar automáticamente el registro. " +
+      "Es posible que la valoración se haya guardado. " +
+      "Antes de repetir el envío, comprueba su recepción."
+    );
+  }, 30000);
+
+  envio.submit();
+}
+
+</script>
+</body>
+</html>
