@@ -18,7 +18,16 @@ function mount(){
 if(!DATA||location.hash!=='#cuadernos')return;
 const wrap=document.getElementById('cuaderno-campo');if(!wrap)return;
 if(wrap.querySelector('.ce-landing'))return;
+active=null;
+pageIndex=0;
 const selector=document.createElement('div');selector.id='ce-selector';
+ const estiloCampo=document.getElementById('clara-visibilidad-campo');
+ if(!estiloCampo){
+   const estilo=document.createElement('style');
+   estilo.id='clara-visibilidad-campo';
+   estilo.textContent='#cuaderno-campo.ce-inicio > :not(.ce-landing):not(#ce-area),#cuaderno-campo:not(.ce-campo) > :not(.ce-landing):not(#ce-area){display:none}';
+   document.head.append(estilo);
+ }
 const header=document.createElement('div');header.className='ce-landing';header.innerHTML='<div class="ce-landing-card"><span class="ce-eyebrow">ANTES DE LA INVESTIGACIÓN</span><h2>Lectura y razonamiento</h2><p>Después de leer la historia de Clara Immerwahr, pon a prueba tu comprensión lectora y tu razonamiento matemático. Elige tu curso y completa las actividades.</p><div id="ce-selector-cursos"></div></div><div class="ce-landing-card"><span class="ce-eyebrow">DURANTE LA INVESTIGACIÓN</span><h2>Cuaderno de campo</h2><p>Registra tus observaciones, anota las pistas, contrasta tus hipótesis y construye tus conclusiones mientras resuelves las diez pruebas.</p><div id="ce-selector-campo"></div></div>';
 wrap.prepend(header);
 [['2','2.º ESO'],['3','3.º ESO'],['4','4.º ESO'],['campo','Cuaderno de campo']].forEach(([k,name])=>{
@@ -28,7 +37,9 @@ render(wrap)
 function render(wrap){
 const old=wrap.querySelector('#ce-area');if(old)old.remove();
 [...wrap.children].forEach((child,i)=>{if(i>0)child.hidden=active!=='campo'});
-if(!active||active==='campo')return;
+wrap.classList.toggle('ce-inicio', !active);
+wrap.classList.toggle('ce-campo', active==='campo');
+ if(!active||active==='campo')return;
 const items=DATA[active],answers=get(),area=document.createElement('div');area.id='ce-area';wrap.append(area);
 const page=items[pageIndex],num=page.page;
 area.innerHTML=`<div class="ce-paper"><h2>Cuaderno de ${active}.º de ESO</h2><p>Bloque I · Lectura y razonamiento · Actividad ${pageIndex+1} de ${items.length}</p><p class="ce-note">Lee las actividades y escribe tus respuestas. El trabajo se guarda automáticamente en este navegador.</p><div class="ce-buttons"><button id="ce-export">Exportar respuestas</button><button id="ce-clear">Vaciar este cuaderno</button></div><p id="ce-status" role="status">Guardado local activado.</p></div>`;

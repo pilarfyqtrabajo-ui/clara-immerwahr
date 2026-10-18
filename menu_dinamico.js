@@ -299,8 +299,7 @@ if(which==='privado'){
   financiacion.style.cssText='font-weight:700;color:#713749;line-height:1.7;margin:15px 0;';
   institucional.append(financiacion);
 
-  parrafo(institucional,
-    'Normativa de referencia: Orden de 14 de enero de 2009 y Resolución de 25 de julio de 2025 (referencias pendientes de comprobación antes de la publicación).');
+
 
   contenedor.append(institucional);
   panel.append(contenedor);
